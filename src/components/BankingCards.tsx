@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import {
   Card,
   CardContent,
@@ -11,6 +11,7 @@ import {
 import { styled } from "@mui/material/styles";
 import cardImage from "../assets/vecteezy_credit-card-clipart-design-illustration_9398850.png";
 import "./index.css";
+import { Pagination } from "@mui/material";
 
 const StyledCard = styled(Card)({
   maxWidth: 345,
@@ -22,10 +23,20 @@ interface BankingCardsProps {
 }
 
 const BankingCards: React.FC<BankingCardsProps> = ({ cardDetails }) => {
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 8;
+  const numberOfPages = Math.ceil(cardDetails.length / itemsPerPage);
+  const handleChange = (event: any, value: any) => {
+    setPage(value);
+  };
+  const paginatedDetails = cardDetails.slice(
+    (page - 1) * itemsPerPage,
+    page * itemsPerPage
+  );
   return (
     <Fragment>
       {cardDetails.length > 0 ? (
-        cardDetails.map((card: any, index: number) => {
+        paginatedDetails.map((card: any, index: number) => {
           return (
             <Fragment key={index}>
               <StyledCard className="cardWidht">
@@ -118,7 +129,7 @@ const BankingCards: React.FC<BankingCardsProps> = ({ cardDetails }) => {
                       <Button
                         variant="contained"
                         color="primary"
-                        href={card.applyLink}
+                        href={'*'}
                         className="buttonApply"
                         style={{ marginTop: "10px" }}
                       >
@@ -139,6 +150,9 @@ const BankingCards: React.FC<BankingCardsProps> = ({ cardDetails }) => {
         })
       ) : (
         <p className="no-data">No cards match the selected filters.</p>
+      )}
+      {paginatedDetails.length > 0 && (
+        <Pagination count={numberOfPages} page={page} onChange={handleChange} />
       )}
     </Fragment>
   );

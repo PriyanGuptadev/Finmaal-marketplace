@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import BankingPage from "./components/BankingPage";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import NotFoundPage from "./components/NotFoundPage";
 
 function App() {
   const [creditCardsDetails, setCreditCardsDetails] = useState(creditCards);
@@ -23,6 +24,7 @@ function App() {
             />
           }
         />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
   );
