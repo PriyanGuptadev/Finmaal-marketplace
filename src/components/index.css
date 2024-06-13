@@ -1,187 +1,188 @@
 .right-part-box .cardWidht {
-  width: 100%;
-  max-width: 100%;
-  border: 3px solid #36397d;
-  margin-bottom: 30px;
-}
-.Discover-box {
-  background: #36397d;
-  color: white;
-  padding: 40px 12px;
-  margin-bottom: 20px;
-  text-align: left;
-  margin-bottom: 20px;
-}
-.Discover-box h3 {
-  color: #ffed00;
-  font-size: 2.4rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -2px;
-  margin-top: 0;
-}
-.Discover-box p {
-  font-size: 1.2rem;
-  line-height: 25px;
-  margin-top: 0;
-}
-.container {
-  max-width: 1120px;
-  margin: 0 auto;
-}
-.features {
-  padding: 8px 16px;
-  display: flex;
-  justify-content: space-between;
-  color: #272a68;
-  border: 1px solid rgba(54, 57, 125, 0.4);
-  background: rgba(54, 57, 125, 0.1);
-  flex-direction: column;
-}
-.features h6 {
-  width: 100%;
-  font-weight: 600;
-  margin-top: 0;
-}
-.features p {
-  width: 100%;
-  font-weight: 600;
-}
-.card-heading {
-  font-size: 1.2rem !important;
-  font-weight: 700 !important;
-  margin-bottom: 15px !important;
-}
-.cardWidht img {
-  height: auto;
-}
-.grid-card {
-  display: flex;
-  gap: 20px;
-}
-.cardTextbox {
-  display: flex;
-  flex-direction: column;
-}
-.cardTextbox .text-1 {
-  font-size: 14px;
-}
-.cardTextbox .text-2 {
-  font-size: 18px;
-  font-weight: 700;
-}
-.buttonApply {
-  margin-left: auto !important;
-  margin-top: 0 !important;
-  height: 40px;
-}
-.no-data {
-  width: 100%;
-  text-align: center;
-  padding-top: 40px;
-  font-size: 2rem;
-}
-.text-center {
-  text-align: center;
-}
-.slider-backGroud {
-  background-color: rgb(242, 197, 8);
-  padding: 50px 0;
-}
-.slider-backGroud .slick-list {
-  max-width: 950px;
-  margin: 0 auto;
-}
-.slider-backGroud .slick-list h3 {
-  font-weight: 300;
-  text-align: center;
-  font-size: 18px;
-}
-.mainContainer {
-  background-color: black;
-  width: 100%;
-  justify-content: center;
-  display: grid;
-  padding: 85px 0px;
-  color: white;
-}
-
-.smallText {
-  font-size: large;
-  justify-content: center;
-  display: flex;
-  width: 737px;
-  color: grey;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  text-size-adjust: 100%;
-  margin-top: 20px;
-}
-
-.yellowBorderLeft {
-  border: 2px solid yellow;
-  margin-right: 0px;
-  margin-left: auto;
-  width: 70px;
-}
-.yellowBorderRight {
-  border: 2px solid yellow;
-  margin-right: auto;
-  margin-left: 0;
-  width: 70px;
-}
-.leftText {
-  justify-content: end;
-  text-align: right;
-  display: flex;
-  font-size: 26px;
-  margin-top: 5px;
-}
-.rigthText {
-  justify-content: start;
-  text-align: left;
-  display: flex;
-  font-size: 26px;
-  margin-top: 5px;
-}
-.finmaalText {
-  font-size: 45px;
-  color: yellow;
-}
-.slick-prev {
-  left: 3% !important;
-  z-index: 1;
-}
-.slick-next {
-  right: 3% !important;
-  z-index: 1;
-}
-.navbar-backGroud {
-  background-color: black !important;
-}
-
-.root-not-found {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-  background-color: #f0f0f0;
-  padding: 24px;
-}
-
-.title-not-found {
-  font-size: 4rem;
-  font-weight: bold;
-  color: #3f51b5;
-}
-
-.subtitle-not-found {
-  font-size: 1.5rem;
-  margin: 16px 0;
-}
-
-.button-not-found {
-  margin-top: 24px;
-}
+    width: 100%;
+    max-width: 100%;
+    border: 3px solid #36397d;
+    margin-bottom: 30px;
+  }
+  .Discover-box {
+    background: #36397d;
+    color: white;
+    padding: 40px 12px;
+    margin-bottom: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .Discover-box h3 {
+    color: #ffed00;
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-top: 0;
+  }
+  .Discover-box p {
+    font-size: 1.2rem;
+    line-height: 25px;
+    margin-top: 0;
+  }
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  .features {
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    color: #272a68;
+    border: 1px solid rgba(54, 57, 125, 0.4);
+    background: rgba(54, 57, 125, 0.1);
+    flex-direction: column;
+  }
+  .features h6 {
+    width: 100%;
+    font-weight: 600;
+    margin-top: 0;
+  }
+  .features p {
+    width: 100%;
+    font-weight: 600;
+  }
+  .card-heading {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+  }
+  .cardWidht img {
+    height: auto;
+  }
+  .grid-card {
+    display: flex;
+    gap: 20px;
+  }
+  .cardTextbox {
+    display: flex;
+    flex-direction: column;
+  }
+  .cardTextbox .text-1 {
+    font-size: 14px;
+  }
+  .cardTextbox .text-2 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .buttonApply {
+    margin-left: auto !important;
+    margin-top: 0 !important;
+    height: 40px;
+  }
+  .no-data {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 2rem;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .slider-backGroud {
+    background-color: rgb(242, 197, 8);
+    padding: 50px 0;
+  }
+  .slider-backGroud .slick-list {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+  .slider-backGroud .slick-list h3 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 18px;
+  }
+  .mainContainer {
+    background-color: black;
+    width: 100%;
+    justify-content: center;
+    display: grid;
+    padding: 85px 0px;
+    color: white;
+  }
+  
+  .smallText {
+    font-size: large;
+    justify-content: center;
+    display: flex;
+    width: 737px;
+    color: grey;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-size-adjust: 100%;
+    margin-top: 20px;
+  }
+  
+  .yellowBorderLeft {
+    border: 2px solid yellow;
+    margin-right: 0px;
+    margin-left: auto;
+    width: 70px;
+  }
+  .yellowBorderRight {
+    border: 2px solid yellow;
+    margin-right: auto;
+    margin-left: 0;
+    width: 70px;
+  }
+  .leftText {
+    justify-content: end;
+    text-align: right;
+    display: flex;
+    font-size: 26px;
+    margin-top: 5px;
+  }
+  .rigthText {
+    justify-content: start;
+    text-align: left;
+    display: flex;
+    font-size: 26px;
+    margin-top: 5px;
+  }
+  .finmaalText {
+    font-size: 45px;
+    color: yellow;
+  }
+  .slick-prev {
+    left: 3% !important;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 3% !important;
+    z-index: 1;
+  }
+  .navbar-backGroud {
+    background-color: black !important;
+  }
+  
+  .root-not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 24px;
+  }
+  
+  .title-not-found {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #3f51b5;
+  }
+  
+  .subtitle-not-found {
+    font-size: 1.5rem;
+    margin: 16px 0;
+  }
+  
+  .button-not-found {
+    margin-top: 24px;
+  }
+  

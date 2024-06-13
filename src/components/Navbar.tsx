@@ -1,8 +1,8 @@
 import React from "react";
-import {Container, Toolbar, Box, AppBar} from "@mui/material";
+import { Container, Toolbar, Box, AppBar } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const Navbar: React.FC =() => {
+const Navbar: React.FC = () => {
   return (
     <AppBar className="navbar-backGroud" position="static">
       <Container maxWidth="xl">
@@ -22,6 +22,6 @@ const Navbar: React.FC =() => {
       </Container>
     </AppBar>
   );
-}
+};
 
 export default Navbar;
