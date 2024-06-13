@@ -159,3 +159,29 @@
 .navbar-backGroud {
   background-color: black !important;
 }
+
+.root-not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 24px;
+}
+
+.title-not-found {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #3f51b5;
+}
+
+.subtitle-not-found {
+  font-size: 1.5rem;
+  margin: 16px 0;
+}
+
+.button-not-found {
+  margin-top: 24px;
+}
