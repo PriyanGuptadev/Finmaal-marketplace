@@ -129,7 +129,7 @@ const BankingCards: React.FC<BankingCardsProps> = ({ cardDetails }) => {
                       <Button
                         variant="contained"
                         color="primary"
-                        href={'*'}
+                        href={"*"}
                         className="buttonApply"
                         style={{ marginTop: "10px" }}
                       >

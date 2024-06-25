@@ -1,131 +1,148 @@
-import React, { Fragment } from "react";
-import { Box, Divider, Grid, Typography } from "@mui/material";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import RemoveBagImage from "../assets/com-removebg-preview.png";
-import MarketPlaceItems from "./MarketPlaceItems";
+import {
+  Box,
+  Button,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Grid,
+  Card,
+  CardContent,
+  CardHeader,
+} from "@mui/material";
+import React, { useState, Fragment } from "react";
+import QuizIcon from "@mui/icons-material/Quiz";
+import InfoIcon from "@mui/icons-material/Info";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import QueryStatsIcon from "@mui/icons-material/QueryStats";
+import { services } from "../utils/Services";
+import FAQs from "./Faqs";
+import ServicesList from "./ServicesList";
+import AboutUs from "./AboutUs";
+import Footer from "./Footer";
+import { faqs } from "../utils/FAQS";
+import ExploreOfferings from "./ExploreOffring";
+import Benefits from "./Benfits";
+import "./index.css";
+type Anchor = "left";
 
 const Home: React.FC = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    autoplay: true,
+  const [state, setState] = useState({ left: false });
+  const [modalName, setModalName] = useState("");
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = (name: string) => {
+    setModalName(name);
+    setModalOpen(true);
   };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setModalName("");
+  };
+
+  const toggleDrawer =
+    (anchor: Anchor, open: boolean) =>
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        return;
+      }
+      setState({ ...state, [anchor]: open });
+    };
+
+  const list = (anchor: Anchor) => (
+    <Box sx={{ width: 300 }} role="presentation">
+      <List>
+        {[
+          "FAQ's",
+          "Discover Finmaal Benefits",
+          "View Offerings",
+          "About Us",
+          "Auxiliary Services",
+        ].map((text) => (
+          <ListItem className="sidebar-list-item" key={text} disablePadding>
+            <ListItemButton onClick={() => openModal(text)}>
+              <ListItemIcon>
+                {text === "FAQ's" ? (
+                  <QuizIcon />
+                ) : text === "Discover Finmaal Benefits" ? (
+                  <InfoIcon />
+                ) : text === "View Offerings" ? (
+                  <VisibilityIcon />
+                ) : text === "About Us" ? (
+                  <BusinessCenterIcon />
+                ) : (
+                  text === "Auxiliary Services" && <SupportAgentIcon />
+                )}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
   return (
     <Fragment>
-      <Box
-        className="slider-backGroud"
-        sx={{ maxWidth: "100%", margin: "0 auto" }}
+      <div className="moreinfo-btn">
+        {(["left"] as const).map((anchor) => (
+          <Fragment key={anchor}>
+            <Button onClick={toggleDrawer(anchor, true)}>
+              More Information <QueryStatsIcon />
+            </Button>
+            <Drawer
+              anchor={anchor}
+              open={state[anchor]}
+              onClose={toggleDrawer(anchor, false)}
+            >
+              {list(anchor)}
+            </Drawer>
+          </Fragment>
+        ))}
+      </div>
+      <div>
+        {modalName === "FAQ's" && (
+          <FAQs faqs={faqs} isOpen={isModalOpen} onClose={closeModal} />
+        )}
+        {modalName === "Discover Finmaal Benefits" && (
+          <Benefits isOpen={isModalOpen} onClose={closeModal} />
+        )}
+        {modalName === "View Offerings" && (
+          <ExploreOfferings isOpen={isModalOpen} onClose={closeModal} />
+        )}
+        {modalName === "Auxiliary Services" && (
+          <ServicesList isOpen={isModalOpen} onClose={closeModal} />
+        )}
+        {modalName === "About Us" && (
+          <AboutUs isOpen={isModalOpen} onClose={closeModal} />
+        )}
+      </div>
+      <Grid
+        container
+        spacing={2}
+        direction="row"
+        alignItems="flex-start"
+        sx={{ maxWidth: "1200px", margin: "0 auto" }}
       >
-        <Slider {...settings}>
-          <Box className="slider-backGroud">
-            <h3 className="text-center">
-              "We're building innovative & ethical solutions to serve
-              generations by fulfilling their financial needs at every stage of
-              their lives, from lifestyle planning to retirement to death..."
-            </h3>
-          </Box>
-          <Box className="slider-backGroud">
-            <h3>
-              "At Finmaal, we are driven by integrity, innovation, and
-              customer-centricity. We believe in providing transparent and
-              ethical financial solutions that empower our customers. Our
-              commitment to excellence, continuous improvement, and fostering
-              trust ensures we meet the evolving needs of our clients and the
-              market."
-            </h3>
-          </Box>
-          <Box className="slider-backGroud">
-            <h3>
-              "We're building innovative & ethical solutions to serve
-              generations by fulfilling their financial needs at every stage of
-              their lives, from lifestyle planning to retirement to death..."
-            </h3>
-          </Box>
-        </Slider>
-      </Box>
-      <Fragment>
-        <Box className="mainContainer">
-          <Box
-            sx={{
-              display: "grid",
-              width: "100%",
-              textAlign: "center",
-              justifyContent: "center",
-            }}
-          >
-            <Typography variant="h1" sx={{ fontSize: 56, color: "white" }}>
-              Finmaal Marketplace
-            </Typography>
-            <Typography className="smallText">
-              The Finmaal Marketplace is complemented by our range of innovative
-              offerings, including personalized financial advice, secure digital
-              wallets, and engaging financial literacy tools. Together, these
-              solutions cater to the comprehensive lifestyle financial needs of
-              our customers, ensuring a seamless and informed financial journey.
-            </Typography>
-          </Box>
-
-          <Box sx={{ marginTop: 5, display: "flex", justifyContent: "center" }}>
-            <Grid sx={{ justifyContent: "center" }} container spacing={10}>
-              <Grid item>
-                <Box sx={{ display: "grid", gap: 10 }}>
-                  <Box sx={{ width: 240 }}>
-                    <div className="yellowBorderLeft" />
-                    <Typography className="leftText">
-                      Personalized <br /> Financial Advice
-                    </Typography>
-                  </Box>
-                  <Box sx={{ width: 240 }}>
-                    <div className="yellowBorderLeft" />
-                    <Typography className="leftText">
-                      Financial Literacy & <br /> Inclusion
-                    </Typography>
-                  </Box>
-                </Box>
-              </Grid>
-              <Grid item sx={{ marginTop: "-21px" }}>
-                <img src={RemoveBagImage} alt="computer" />
-              </Grid>
-              <Grid item>
-                <Box sx={{ display: "grid", gap: 7 }}>
-                  <Box sx={{ width: 240 }}>
-                    <div className="yellowBorderRight" />
-                    <Typography className="rigthText">
-                      All financial <br /> information in one <br />
-                      place
-                    </Typography>
-                  </Box>
-                  <Box sx={{ width: 240 }}>
-                    <div className="yellowBorderRight" />
-                    <Typography className="rigthText">
-                      Hassle-free motor <br /> claim Experience
-                    </Typography>
-                  </Box>
-                </Box>
-              </Grid>
-            </Grid>
-          </Box>
-
-          <Box>
-            <Divider
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                marginTop: 10,
-                borderBottom: "2px solid yellow",
-                width: "97.4vw",
-              }}
-            />
-            <MarketPlaceItems />
-          </Box>
-        </Box>
-      </Fragment>
+        {services.map((elem: any) => (
+          <Grid item xs={12} sm={6} md={3} key={services.indexOf(elem)}>
+            <Card className="card_name">
+              <CardHeader className="card_title" title={elem.title} subheader={elem.subtitle} />
+              <CardContent className="card_icon">{elem.icon}</CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+      <Footer />
     </Fragment>
   );
 };

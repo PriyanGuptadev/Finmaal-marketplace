@@ -17,6 +17,9 @@ const Navbar: React.FC = () => {
             >
               Banking
             </Link>
+            <Link to={"cards"} style={{ marginRight: "50px", color: "white" }}>
+              Card Details
+            </Link>
           </Box>
         </Toolbar>
       </Container>

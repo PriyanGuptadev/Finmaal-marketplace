@@ -15,7 +15,7 @@ Clone the repository using the following command:
 git clone https://github.com/PriyanGuptadev/Finmaal-marketplace.git
 
 ### Navigate to the Project Directory
-cd MY-APP
+cd project-folder-name
 
 ### Install the packages
 npm install

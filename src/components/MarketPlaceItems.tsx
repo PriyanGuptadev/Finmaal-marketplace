@@ -81,10 +81,9 @@ function MarketPlaceItems() {
             </span>
           </Typography>
         </Box>
-        <Box style={{    width: '30%',
-    display: 'flex',
-    justifyContent: 'center'
-}}>
+        <Box
+          style={{ width: "30%", display: "flex", justifyContent: "center" }}
+        >
           <img src={MobileImage} alt="computer" />
         </Box>
       </Box>

@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "./Header";
 import { Box } from "@mui/material";
 import CustomFilters from "./CustomFilters";
 import BankingCards from "./BankingCards";
 import Footer from "./Footer";
 import { creditCards } from "../utils/CardInfo";
-
 interface BankingPageProps {
   creditCardsDetails: any[];
   setCreditCardsDetails: (cards: any[]) => void;
@@ -17,10 +15,9 @@ const BankingPage: React.FC<BankingPageProps> = ({
 }) => {
   return (
     <div>
-      <Header />
       <Box className="container">
-        <Box display="flex">
-          <Box className="left-sidebar">
+        <Box display="grid">
+          <Box>
             <CustomFilters
               cardDetails={creditCards}
               setCardsDetails={setCreditCardsDetails}

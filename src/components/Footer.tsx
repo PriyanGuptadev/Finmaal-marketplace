@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Grid, Typography } from "@mui/material";
 
-const Footer: React.FC =() => {
+const Footer: React.FC = () => {
   return (
     <Box
       component="footer"
@@ -9,10 +9,8 @@ const Footer: React.FC =() => {
         py: 6,
         px: 2,
         mt: "auto",
-        backgroundColor: (theme) =>
-          theme.palette.mode === "light"
-            ? theme.palette.grey[200]
-            : theme.palette.grey[800],
+        color: "goldenrod",
+        backgroundColor: "#261414",
       }}
     >
       <Container maxWidth="lg">
@@ -21,7 +19,7 @@ const Footer: React.FC =() => {
             <Typography variant="h6" gutterBottom>
               About Us
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="goldenrod">
               We compare over 200 credit cards to help you find the right one.
               From airmiles to cashback, we have a card for every need.
             </Typography>
@@ -30,7 +28,7 @@ const Footer: React.FC =() => {
             <Typography variant="h6" gutterBottom>
               Contact Us
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body2" color="goldenrod">
               Email: support@creditcards.com
               <br />
               Phone: +971 1234 5678
@@ -38,7 +36,7 @@ const Footer: React.FC =() => {
           </Grid>
         </Grid>
         <Box mt={4} textAlign="center">
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="goldenrod">
             &copy; {new Date().getFullYear()} Credit Card Application. All
             rights reserved.
           </Typography>
@@ -46,6 +44,6 @@ const Footer: React.FC =() => {
       </Container>
     </Box>
   );
-}
+};
 
 export default Footer;

@@ -7,6 +7,7 @@ import BankingPage from "./components/BankingPage";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import NotFoundPage from "./components/NotFoundPage";
+import Cards from "./components/Cards";
 
 function App() {
   const [creditCardsDetails, setCreditCardsDetails] = useState(creditCards);
@@ -15,8 +16,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="" element={<Home />} />
+        <Route path="/banking_page" element={<Cards />} />
         <Route
-          path="/banking_page"
+          path="/cards"
           element={
             <BankingPage
               creditCardsDetails={creditCardsDetails}
